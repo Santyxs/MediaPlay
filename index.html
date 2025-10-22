@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPlay</title>
+
+    <!-- CSS de Plyr -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">MediaPlay ⏵</div>
+        <nav>
+            <button id="helpButton" class="nav-btn" title="Convertir formato">?</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Subir archivo -->
+        <section class="upload-box">
+            <label for="fileInput" class="upload-label">📂 Seleccionar archivo</label>
+            <input type="file" id="fileInput" accept="video/*" hidden>
+        </section>
+
+        <!-- Información del archivo -->
+        <section class="file-info">
+            <p><strong>Nombre:</strong> <span id="fileName">Ningún archivo seleccionado</span></p>
+            <p><strong>Resolución:</strong> <span id="fileResolution">Desconocida</span></p>
+            <p><strong>Calidad:</strong> <span id="fileQuality">Desconocida</span></p>
+            <p id="errorMessage" class="error-message"></p>
+        </section>
+
+        <!-- Reproductor integrado -->
+        <section class="player-box">
+            <video id="player" class="plyr" controls></video>
+        </section>
+    </main>
+
+    <!-- Plyr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.7/dist/plyr.polyfilled.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
